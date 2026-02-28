@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: ai-feedback-api
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/feedback_ai?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DB_USERNAME:feedback_user}
+    password: ${DB_PASSWORD:feedback_pass}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:LlyffxRWhfAq9HYtj+DXX9yyEelkvm6V6H89KK/2Hus=}
+    expiration-minutes: 120
+  csv:
+    max-bytes: ${CSV_MAX_BYTES:5242880}
+  admin:
+    username: ${APP_ADMIN_USERNAME:admin}
+    password: ${APP_ADMIN_PASSWORD:ChangeMeNow123!}
+  model:
+    artifacts-dir: ${MODEL_ARTIFACTS_DIR:./artifacts}

@@ -1,0 +1,29 @@
+# Maven
+target/
+.m2/
+
+# IDE
+.idea/
+.settings/
+.classpath
+.project
+.run/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Artifacts
+artifacts/
+screenshots/
+
+# Node (if frontend)
+node_modules/
+dist/
+build/
+
+# Env
+.env
